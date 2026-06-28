@@ -1,0 +1,203 @@
+/* 
+ * Estilo Central de Diseño para el Menú del Restaurante "El Quijote"
+ * Basado en la paleta "Horizonte Expandido" (Atardecer Rústico)
+ */
+
+:root {
+    /* Paleta de colores según especificación */
+    --color-lino: #F4EFE6;      /* Fondo principal y base */
+    --color-arena: #EAE0D2;     /* Fondos alternativos */
+    --color-nogal: #5C4033;      /* Textos secundarios / intros */
+    --color-roble: #3E2C23;      /* Títulos principales y navegación */
+    --color-corteza: #2B1C15;    /* Footer, highlights y hovered states */
+    --color-terracota: #C27A5A;  /* Decoración, bordes, separadores */
+    --color-azafar: #E8854A;     /* Acciones destacadas (hover botones) */
+    --color-carmesi: #D95A3B;    /* Botones primarios y ofertas muy especiales */
+    --color-salvia: #6A705C;     /* Íconos y detalles sutiles */
+    --color-laurel: #4D6B3A;     /* Frescura, ingredientes naturales */
+    --color-cenit: #8C9BA8;      /* Información auxiliar (horarios) */
+    --color-pizarra: #4E5B66;    /* Botones secundarios y inputs */
+
+    /* Tipografía */
+    --font-primary: 'Playfair Display', serif;
+    --font-secondary: 'Source Sans 3', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-lino);
+    color: var(--color-nogal);
+    font-family: var(--font-secondary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Layout & Typography */
+h1, h2, h3 {
+    font-family: var(--font-primary);
+    color: var(--color-roble);
+}
+
+h2.section-title {
+    text-align: center;
+    padding: 60px 20px 10px;
+    border-bottom: 2px solid var(--color-terracota);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 30px 10%;
+    background: linear-gradient(rgba(0,0,0,0.05), transparent);
+}
+
+.main-logo {
+    max-height: 120px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 3.5rem;
+    margin: 10px 0;
+}
+
+header .subtitle {
+    color: var(--color-terracota);
+    font-style: italic;
+}
+
+/* Menú y Secciones */
+.menu-section {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.section-content {
+    background: var(--color-arena);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(92, 64, 51, 0.1);
+}
+
+/* Listas y Grias */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.menu-item {
+    padding: 15px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    border-bottom: 1px solid rgba(9th, 64, 51, 0.2);
+}
+
+.menu-item:hover {
+    transform: translateY(-3px);
+    border-bottom: 2px solid var(--color-terracota);
+}
+
+.item-name {
+    display: block;
+    font-weight: bold;
+    color: var(--color-roble);
+}
+
+.item-desc {
+    color: var(--color-nogal);
+    font-size: 0.9rem;
+}
+
+.item-price {
+    float: right;
+    color: var(--color-azafar);
+    font-weight: bold;
+}
+
+/* Especiales y Tostadas */
+.tostada-special {
+    margin-top: 20px;
+    background-color: rgba(194, 122, 90, 0.1);
+    padding: 20px;
+    border-left: 5px solid var(--color-terracota);
+}
+
+/* Cards */
+.card {
+    background: white;
+    border: 1px solid var(--color-arena);
+    padding: 30px;
+    border-radius: 8px;
+    position: relative;
+    transition: all 0.4s ease;
+}
+
+.card:hover {
+    box-shadow: 0 10px 25px rgba(62, 44, 35, 0.1);
+    border-color: var(--color-terracota);
+}
+
+.price-tag {
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: var(--color-carmesi);
+    padding: 4px 12px;
+    border: 1px solid var(--color-terracota);
+}
+
+/* Tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--color-arena);
+}
+
+th {
+    background-color: var(--color-terracota);
+    color: white;
+}
+
+/* Romántico */
+.romantic {
+    background-color: rgba(96, 120, 84, 0.1);
+    border: 1px solid var(--color-laurel);
+}
+
+.romance-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Animación de entrada */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.menu-section {
+    animation: fadeInUp 1s ease forwards;
+}
+
+/* Resposividad */
+@media (max-width: 768px) {
+    .romance-grid, .grid-two, .memory-grid {
+        grid-template-columns: 1fr;
+    }
+}
